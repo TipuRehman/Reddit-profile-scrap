@@ -1,0 +1,215 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ebf818d4-d21c-4ee9-82bc-c73e8eaf6313",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{\n",
+      "    \"Username\": \"EverythingCanadian57\",\n",
+      "    \"Display Name\": \"u_EverythingCanadian57\",\n",
+      "    \"Profile Picture\": \"https://i.redd.it/snoovatar/avatars/nftv2_bmZ0X2VpcDE1NToxMzdfZTY0YmI3ZGQwYTEzYWY2MjJlMGRlNjQ1NmQxYmJhZGM4ZDFlYzA5ZF85OTAz_rare_d0cff18c-02c9-4b03-88e2-85b95dca9ebf-headshot.png\",\n",
+      "    \"Banner Image\": \"https://styles.redditmedia.com/t5_tyams/styles/profileBanner_gux0kisdsoa21.JPG?width=1280&amp;height=384&amp;crop=1280:384,smart&amp;s=67f6ab251df6ab8b14526171a50e678a86af512f\",\n",
+      "    \"Total Karma\": 3496,\n",
+      "    \"Post Karma\": 3019,\n",
+      "    \"Comment Karma\": 463,\n",
+      "    \"Awardee Karma\": 0,\n",
+      "    \"Awarder Karma\": 14,\n",
+      "    \"Account Created (UTC)\": 1546499014.0,\n",
+      "    \"Verified\": true,\n",
+      "    \"Has Verified Email\": true,\n",
+      "    \"Gold Member\": false,\n",
+      "    \"Moderator\": false,\n",
+      "    \"Public Bio\": \"Hello I am but a small spec in this universe. Born 1996 so I'm half 90s kid half Zoomer. Yikes\"\n",
+      "}\n"
+     ]
+    }
+   ],
+   "source": [
+    "import json\n",
+    "\n",
+    "# Reddit user profile JSON data (Replace this with actual JSON response if needed)\n",
+    "reddit_profile_json = {\n",
+    "    \"kind\": \"t2\",\n",
+    "    \"data\": {\n",
+    "        \"name\": \"EverythingCanadian57\",\n",
+    "        \"display_name\": \"u_EverythingCanadian57\",\n",
+    "        \"icon_img\": \"https://i.redd.it/snoovatar/avatars/nftv2_bmZ0X2VpcDE1NToxMzdfZTY0YmI3ZGQwYTEzYWY2MjJlMGRlNjQ1NmQxYmJhZGM4ZDFlYzA5ZF85OTAz_rare_d0cff18c-02c9-4b03-88e2-85b95dca9ebf-headshot.png\",\n",
+    "        \"banner_img\": \"https://styles.redditmedia.com/t5_tyams/styles/profileBanner_gux0kisdsoa21.JPG?width=1280&amp;height=384&amp;crop=1280:384,smart&amp;s=67f6ab251df6ab8b14526171a50e678a86af512f\",\n",
+    "        \"total_karma\": 3496,\n",
+    "        \"link_karma\": 3019,\n",
+    "        \"comment_karma\": 463,\n",
+    "        \"awardee_karma\": 0,\n",
+    "        \"awarder_karma\": 14,\n",
+    "        \"created_utc\": 1546499014.0,\n",
+    "        \"public_description\": \"Hello I am but a small spec in this universe. Born 1996 so I'm half 90s kid half Zoomer. Yikes\",\n",
+    "        \"verified\": True,\n",
+    "        \"is_gold\": False,\n",
+    "        \"is_mod\": False,\n",
+    "        \"has_verified_email\": True\n",
+    "    }\n",
+    "}\n",
+    "\n",
+    "# Extracting relevant information\n",
+    "profile_info = {\n",
+    "    \"Username\": reddit_profile_json[\"data\"].get(\"name\", \"N/A\"),\n",
+    "    \"Display Name\": reddit_profile_json[\"data\"].get(\"display_name\", \"N/A\"),\n",
+    "    \"Profile Picture\": reddit_profile_json[\"data\"].get(\"icon_img\", \"N/A\"),\n",
+    "    \"Banner Image\": reddit_profile_json[\"data\"].get(\"banner_img\", \"N/A\"),\n",
+    "    \"Total Karma\": reddit_profile_json[\"data\"].get(\"total_karma\", \"N/A\"),\n",
+    "    \"Post Karma\": reddit_profile_json[\"data\"].get(\"link_karma\", \"N/A\"),\n",
+    "    \"Comment Karma\": reddit_profile_json[\"data\"].get(\"comment_karma\", \"N/A\"),\n",
+    "    \"Awardee Karma\": reddit_profile_json[\"data\"].get(\"awardee_karma\", \"N/A\"),\n",
+    "    \"Awarder Karma\": reddit_profile_json[\"data\"].get(\"awarder_karma\", \"N/A\"),\n",
+    "    \"Account Created (UTC)\": reddit_profile_json[\"data\"].get(\"created_utc\", \"N/A\"),\n",
+    "    \"Verified\": reddit_profile_json[\"data\"].get(\"verified\", False),\n",
+    "    \"Has Verified Email\": reddit_profile_json[\"data\"].get(\"has_verified_email\", False),\n",
+    "    \"Gold Member\": reddit_profile_json[\"data\"].get(\"is_gold\", False),\n",
+    "    \"Moderator\": reddit_profile_json[\"data\"].get(\"is_mod\", False),\n",
+    "    \"Public Bio\": reddit_profile_json[\"data\"].get(\"public_description\", \"N/A\"),\n",
+    "}\n",
+    "\n",
+    "# Pretty Print the Extracted Data\n",
+    "print(json.dumps(profile_info, indent=4))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "bf172eb6-2eb8-44dd-beea-1f692d4e8748",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "✅ JSON file created: user_profile.json\n"
+     ]
+    }
+   ],
+   "source": [
+    "import json\n",
+    "\n",
+    "# Sample Reddit user JSON data (replace this with actual data)\n",
+    "json_data = {\n",
+    "    \"kind\": \"t2\",\n",
+    "    \"data\": {\n",
+    "        \"name\": \"EverythingCanadian57\",\n",
+    "        \"display_name_prefixed\": \"u/EverythingCanadian57\",\n",
+    "        \"title\": \"EverythingCanadian\",\n",
+    "        \"public_description\": \"Hello I am but a small spec in this universe. Born 1996 so I'm half 90s kid half Zoomer. Yikes\",\n",
+    "        \"icon_img\": \"https://i.redd.it/snoovatar/avatars/nftv2_bmZ0X2VpcDE1NToxMzdfZTY0YmI3ZGQwYTEzYWY2MjJlMGRlNjQ1NmQxYmJhZGM4ZDFlYzA5ZF85OTAz_rare_d0cff18c-02c9-4b03-88e2-85b95dca9ebf-headshot.png\",\n",
+    "        \"banner_img\": \"https://styles.redditmedia.com/t5_tyams/styles/profileBanner_gux0kisdsoa21.JPG?width=1280&height=384&crop=1280:384,smart&s=67f6ab251df6ab8b14526171a50e678a86af512f\",\n",
+    "        \"total_karma\": 3496,\n",
+    "        \"comment_karma\": 463,\n",
+    "        \"link_karma\": 3019,\n",
+    "        \"awardee_karma\": 0,\n",
+    "        \"awarder_karma\": 14,\n",
+    "        \"created_utc\": 1546499014.0,\n",
+    "        \"has_verified_email\": True,\n",
+    "        \"is_gold\": False,\n",
+    "        \"is_mod\": False,\n",
+    "        \"subreddit\": {\n",
+    "            \"subscribers\": 0,\n",
+    "            \"restrict_posting\": True,\n",
+    "            \"restrict_commenting\": False\n",
+    "        }\n",
+    "    }\n",
+    "}\n",
+    "\n",
+    "# Save the extracted data into a file\n",
+    "with open(\"user_profile.json\", \"w\", encoding=\"utf-8\") as f:\n",
+    "    json.dump(json_data, f, indent=4)\n",
+    "\n",
+    "print(\"✅ JSON file created: user_profile.json\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "2a79e632-583e-479c-b28e-14702d4fc7b9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "👤 Username: u/EverythingCanadian57\n",
+      "📝 Title: EverythingCanadian\n",
+      "📜 Bio: Hello I am but a small spec in this universe. Born 1996 so I'm half 90s kid half Zoomer. Yikes\n",
+      "🏅 Total Karma: 3496\n",
+      "💬 Comment Karma: 463\n",
+      "🔗 Link Karma: 3019\n",
+      "✅ Verified Email: Yes\n",
+      "🥇 Reddit Gold: No\n",
+      "🛡️ Moderator: No\n",
+      "📅 Account Created (UTC): 1546499014.0\n",
+      "👥 Subreddit Subscribers: 0\n",
+      "🖼️ Profile Image: https://i.redd.it/snoovatar/avatars/nftv2_bmZ0X2VpcDE1NToxMzdfZTY0YmI3ZGQwYTEzYWY2MjJlMGRlNjQ1NmQxYmJhZGM4ZDFlYzA5ZF85OTAz_rare_d0cff18c-02c9-4b03-88e2-85b95dca9ebf-headshot.png\n",
+      "🎨 Banner Image: https://styles.redditmedia.com/t5_tyams/styles/profileBanner_gux0kisdsoa21.JPG?width=1280&height=384&crop=1280:384,smart&s=67f6ab251df6ab8b14526171a50e678a86af512f\n"
+     ]
+    }
+   ],
+   "source": [
+    "import json\n",
+    "\n",
+    "# Load the JSON file\n",
+    "file_path = \"user_profile.json\"\n",
+    "with open(file_path, \"r\", encoding=\"utf-8\") as f:\n",
+    "    reddit_profile = json.load(f)\n",
+    "\n",
+    "# Extract relevant details\n",
+    "user_data = reddit_profile[\"data\"]\n",
+    "print(f\"👤 Username: {user_data['display_name_prefixed']}\")\n",
+    "print(f\"📝 Title: {user_data['title']}\")\n",
+    "print(f\"📜 Bio: {user_data['public_description']}\")\n",
+    "print(f\"🏅 Total Karma: {user_data['total_karma']}\")\n",
+    "print(f\"💬 Comment Karma: {user_data['comment_karma']}\")\n",
+    "print(f\"🔗 Link Karma: {user_data['link_karma']}\")\n",
+    "print(f\"✅ Verified Email: {'Yes' if user_data['has_verified_email'] else 'No'}\")\n",
+    "print(f\"🥇 Reddit Gold: {'Yes' if user_data['is_gold'] else 'No'}\")\n",
+    "print(f\"🛡️ Moderator: {'Yes' if user_data['is_mod'] else 'No'}\")\n",
+    "print(f\"📅 Account Created (UTC): {user_data['created_utc']}\")\n",
+    "print(f\"👥 Subreddit Subscribers: {user_data['subreddit']['subscribers']}\")\n",
+    "\n",
+    "# Display profile and banner images\n",
+    "print(f\"🖼️ Profile Image: {user_data['icon_img']}\")\n",
+    "print(f\"🎨 Banner Image: {user_data['banner_img']}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7afd47ac-a183-49ad-aeaf-d4112c91ebc2",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
